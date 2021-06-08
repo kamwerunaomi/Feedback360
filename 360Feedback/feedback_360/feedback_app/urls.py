@@ -17,5 +17,6 @@ urlpatterns = [
     path('performance', views.performance, name='performance'),
     path('profile',views.profile, name='profile'),
     path('questions', views.questions, name='questions'),
+    path('aadmin', views.admin,name='aadmin'),
 
 ]

@@ -80,7 +80,8 @@ def profile(request):
 
 def questions(request):
 	return render(request, 'questions.html')
-
+def admin(request):
+	return render(request, 'admin.html')
 
 def users(request):
 	return render(request,'user.html')
