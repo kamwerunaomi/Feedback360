@@ -27,33 +27,351 @@
                 <tr>
                     <td>Tiger Nixon</td>
                     <td>System Architect</td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Review</button></td>
+                    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Review
+                    </button></td>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-left: 500px;">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content" style="width: 700px;">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">PLEASE RATE **</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body" >
+                                <!-- Material input -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                            <div class="card text-left">
+                                                <div class="card-body">
+                                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                        <li class="nav-item"><a class="nav-link active" id="home-basic-tab" data-toggle="tab" href="#homeBasic" role="tab" aria-controls="homeBasic" aria-selected="true">Develop Others</a></li>
+                                                        <li class="nav-item"><a class="nav-link" id="profile-basic-tab" data-toggle="tab" href="#profileBasic" role="tab" aria-controls="profileBasic" aria-selected="false">Resilience</a></li>
+                                                        <li class="nav-item"><a class="nav-link" id="contact-basic-tab" data-toggle="tab" href="#contactBasic" role="tab" aria-controls="contactBasic" aria-selected="false">Feedback</a></li>
+                                                        <li class="nav-item"><a class="nav-link" id="home-basic-tab" data-toggle="tab" href="#homeBasic" role="tab" aria-controls="homeBasic" aria-selected="true">Delivering</a></li>
+                                                        <li class="nav-item"><a class="nav-link" id="home-basic-tab" data-toggle="tab" href="#homeBasic" role="tab" aria-controls="homeBasic" aria-selected="true">Initiative</a></li>
+
+
+                                                    </ul>
+                                                    <div class="tab-content" id="myTabContent">
+                                                        <div class="tab-pane fade show active" id="homeBasic" role="tabpanel" aria-labelledby="home-basic-tab">
+                                                            <p>How does *** keep talented people challenged?</p> 
+                                                            <div class="rating">
+                                                                <input id="2timing5" name="timing2" type="radio" value="5" class="radio-btn hide" />
+                                                                <label for="2timing5">☆</label>
+                                                                <input id="2timing4" name="timing2" type="radio" value="4" class="radio-btn hide" />
+                                                                <label for="2timing4">☆</label>
+                                                                <input id="2timing3" name="timing2" type="radio" value="3" class="radio-btn hide" />
+                                                                <label for="2timing3">☆</label>
+                                                                <input id="2timing2" name="timing2" type="radio" value="2" class="radio-btn hide" />
+                                                                <label for="2timing2">☆</label>
+                                                                <input id="2timing1" name="timing2" type="radio" value="1" class="radio-btn hide" />
+                                                                <label for="timing1">☆</label>
+                                                                <div class="clear"></div>
+                                                              </div>
+                                                              <br>
+                                                              <br>
+                                                              <br>
+                                                            <p>How does *** develop bench strength for the future?</p>
+                                                            <div class="rating">
+                                                                <input id="2starmatch5" name="match2" type="radio" value="5" class="radio-btn hide" />
+                                                                <label for="2starmatch5">☆</label>
+                                                                <input id="2starmatch4" name="match2" type="radio" value="4" class="radio-btn hide" />
+                                                                <label for="2starmatch4">☆</label>
+                                                                <input id="2starmatch3" name="match2" type="radio" value="3" class="radio-btn hide" />
+                                                                <label for="2starmatch3">☆</label>
+                                                                <input id="2starmatch2" name="match2" type="radio" value="2" class="radio-btn hide" />
+                                                                <label for="2starmatch2">☆</label>
+                                                                <input id="2star1match" name="match2" type="radio" value="1" class="radio-btn hide" />
+                                                                <label for="2star1match">☆</label>
+                                                                <div class="clear"></div>
+                                                              </div>
+                                                            <style>
+                                                                html {
+                                                                    box-sizing: border-box;
+                                                                    min-height: 100vh;
+                                                                    display: flex;
+                                                                    justify-content: center;
+                                                                    align-items: center;
+                                                                    font-family: "VT323", monospace;
+                                                                    }
+
+                                                                    .wrapper {
+                                                                    padding: 10px;
+                                                                    border: 1px solid #000;
+                                                                    max-width: 350px;
+                                                                    font-family: "VT323", monospace;
+                                                                    }
+
+                                                                    /* rating */
+                                                                    .therating {
+                                                                    display: flex;
+                                                                    justify-content: space-between;
+                                                                    align-items: center;
+                                                                    }
+                                                                    .starlabel {
+                                                                        padding: 0 !important;
+                                                                        margin: 0 !important;
+                                                                    }
+
+                                                                    .hide {
+                                                                    display: none;
+                                                                    }
+
+                                                                    .clear {
+                                                                    float: none;
+                                                                    clear: both;
+                                                                    }
+
+                                                                    .rating {
+                                                                        unicode-bidi: bidi-override;
+                                                                        direction: rtl;
+                                                                    }
+
+                                                                    .rating > label {
+                                                                        padding: 0 !important;
+                                                                        margin: 0 !important;
+                                                                        cursor: pointer;
+                                                                        color: #000;
+                                                                        width: 1.1em;
+                                                                    }
+
+                                                                    .rating > label:hover,
+                                                                    .rating > label:hover ~ label,
+                                                                    .rating > input.radio-btn:checked ~ label {
+                                                                        color: transparent;
+                                                                    }
+
+                                                                    .rating > label:hover:before,
+                                                                    .rating > label:hover ~ label:before,
+                                                                    .rating > input.radio-btn:checked ~ label:before,
+                                                                    .rating > input.radio-btn:checked ~ label:before {
+                                                                        content: "\2605";
+                                                                        color: #FFD700;
+                                                                    }
+
+
+                                                                    .star_full {
+                                                                        content: "\2606";
+                                                                        color: #FFD700;
+                                                                    }
+
+                                                                    .comment {
+                                                                    color:  #212121;
+                                                                    }
+                                                          </style>
+                                                            
+                                                              <br>
+                                                              <br>
+                                                              <br>
+                                                            
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <!--  SmartWizard html -->
+                                        <!-- <div id="smartwizard">
+                                            <div>
+                                                <div id="Develop Others">
+                                                    <h3 class="border-bottom border-gray pb-2" style="font-weight: bold; ">Develop Others</h3>
+                                                    <p>How does *** keep talented people challenged?</p>
+                                                    <div class="rate">
+                                                        <input type="radio" id="star5" name="rate" value="5" />
+                                                        <label for="star5" title="text">5 stars</label>
+                                                        <input type="radio" id="star4" name="rate" value="4" />
+                                                        <label for="star4" title="text">4 stars</label>
+                                                        <input type="radio" id="star3" name="rate" value="3" />
+                                                        <label for="star3" title="text">3 stars</label>
+                                                        <input type="radio" id="star2" name="rate" value="2" />
+                                                        <label for="star2" title="text">2 stars</label>
+                                                        <input type="radio" id="star1" name="rate" value="1" />
+                                                        <label for="star1" title="text">1 star</label> 
+                                                      </div>
+                                                      <br>
+                                                      <br>
+                                                      <br>
+                                                      <p>How does *** develop bench strength for the future?</p>
+                                                    <div class="rate">
+                                                        <input type="radio" id="star5" name="rate" value="5" />
+                                                        <label for="star5" title="text">5 stars</label>
+                                                        <input type="radio" id="star4" name="rate" value="4" />
+                                                        <label for="star4" title="text">4 stars</label>
+                                                        <input type="radio" id="star3" name="rate" value="3" />
+                                                        <label for="star3" title="text">3 stars</label>
+                                                        <input type="radio" id="star2" name="rate" value="2" />
+                                                        <label for="star2" title="text">2 stars</label>
+                                                        <input type="radio" id="star1" name="rate" value="1" />
+                                                        <label for="star1" title="text">1 star</label>
+                                                        
+                                                      </div>
+                                                      <style>
+                                                          *{
+                                                                margin: 0;
+                                                                padding: 0;
+                                                            }
+                                                            .rate {
+                                                                float: left;
+                                                                height: 46px;
+                                                                padding: 0 10px;
+                                                            }
+                                                            .rate:not(:checked) > input {
+                                                                position:absolute;
+                                                                top:-9999px;
+                                                            }
+                                                            .rate:not(:checked) > label {
+                                                                float:right;
+                                                                width:1em;
+                                                                overflow:hidden;
+                                                                white-space:nowrap;
+                                                                cursor:pointer;
+                                                                font-size:30px;
+                                                                color:#ccc;
+                                                            }
+                                                            .rate:not(:checked) > label:before {
+                                                                content: '★ ';
+                                                            }
+                                                            .rate > input:checked ~ label {
+                                                                color: #ffc700;    
+                                                            }
+                                                            .rate:not(:checked) > label:hover,
+                                                            .rate:not(:checked) > label:hover ~ label {
+                                                                color: #deb217;  
+                                                            }
+                                                            .rate > input:checked + label:hover,
+                                                            .rate > input:checked + label:hover ~ label,
+                                                            .rate > input:checked ~ label:hover,
+                                                            .rate > input:checked ~ label:hover ~ label,
+                                                            .rate > label:hover ~ input:checked ~ label {
+                                                                color: #c59b08;
+                                                            }
+                                                      </style>
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <div id="Resilience">
+                                                    <h3 class="border-bottom border-gray pb-2"style="font-weight: bold;">Resilience</h3>
+                                                    <div class="rate">
+                                                        <input type="radio" id="star5" name="rate" value="5" />
+                                                        <label for="star5" title="text">5 stars</label>
+                                                        <input type="radio" id="star4" name="rate" value="4" />
+                                                        <label for="star4" title="text">4 stars</label>
+                                                        <input type="radio" id="star3" name="rate" value="3" />
+                                                        <label for="star3" title="text">3 stars</label>
+                                                        <input type="radio" id="star2" name="rate" value="2" />
+                                                        <label for="star2" title="text">2 stars</label>
+                                                        <input type="radio" id="star1" name="rate" value="1" />
+                                                        <label for="star1" title="text">1 star</label>
+                                                        
+                                                      </div>
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <div id="Feedback">
+                                                    <h3 class="border-bottom border-gray pb-2" style="font-weight: bold;">Feedback</h3>
+                                                    <div class="rate">
+                                                        <input type="radio" id="star5" name="rate" value="5" />
+                                                        <label for="star5" title="text">5 stars</label>
+                                                        <input type="radio" id="star4" name="rate" value="4" />
+                                                        <label for="star4" title="text">4 stars</label>
+                                                        <input type="radio" id="star3" name="rate" value="3" />
+                                                        <label for="star3" title="text">3 stars</label>
+                                                        <input type="radio" id="star2" name="rate" value="2" />
+                                                        <label for="star2" title="text">2 stars</label>
+                                                        <input type="radio" id="star1" name="rate" value="1" />
+                                                        <label for="star1" title="text">1 star</label>
+                                                        
+                                                      </div>
+                                                      <br>
+                                                      <br>
+                                                </div>
+                                                <div id="Delivering">
+                                                    <h3 class="border-bottom border-gray pb-2" style="font-weight: bold;">Delivering</h3>
+                                                    <div class="rate">
+                                                        <input type="radio" id="star5" name="rate" value="5" />
+                                                        <label for="star5" title="text">5 stars</label>
+                                                        <input type="radio" id="star4" name="rate" value="4" />
+                                                        <label for="star4" title="text">4 stars</label>
+                                                        <input type="radio" id="star3" name="rate" value="3" />
+                                                        <label for="star3" title="text">3 stars</label>
+                                                        <input type="radio" id="star2" name="rate" value="2" />
+                                                        <label for="star2" title="text">2 stars</label>
+                                                        <input type="radio" id="star1" name="rate" value="1" />
+                                                        <label for="star1" title="text">1 star</label>
+                                                        
+                                                      </div>
+                                                      <br>
+                                                      <br>
+                                                </div>
+                                                <div id="Initiative">
+                                                    <h3 class="border-bottom border-gray pb-2" style="font-weight: bold;">Initiative</h3>
+                                                    <div class="rate">
+                                                        <input type="radio" id="star5" name="rate" value="5" />
+                                                        <label for="star5" title="text">5 stars</label>
+                                                        <input type="radio" id="star4" name="rate" value="4" />
+                                                        <label for="star4" title="text">4 stars</label>
+                                                        <input type="radio" id="star3" name="rate" value="3" />
+                                                        <label for="star3" title="text">3 stars</label>
+                                                        <input type="radio" id="star2" name="rate" value="2" />
+                                                        <label for="star2" title="text">2 stars</label>
+                                                        <input type="radio" id="star1" name="rate" value="1" />
+                                                        <label for="star1" title="text">1 star</label>
+                                                        
+                                                      </div>
+                                                      <br>
+                                                      <br>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" value="Submit" id="order" class="btn btn-primary">SUBMIT</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
                     
                 </tr>
                 <tr>
                     <td>Garrett Winters</td>
                     <td>Accountant</td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Review</button></td>
+                    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Review
+                    </button></td>
                 </tr>
                 <tr>
                     <td>Garrett Winters</td>
                     <td>Accountant</td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Review</button></td>
+                    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Review
+                    </button></td>
                 </tr>
                 <tr>
                     <td>Garrett Winters</td>
                     <td>Accountant</td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Review</button></td>
+                    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Review
+                    </button></td>
                 </tr>
                 <tr>
                     <td>Garrett Winters</td>
                     <td>Accountant</td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Review</button></td>
+                    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Review
+                    </button></td>
                 </tr>
                 <tr>
                     <td>Garrett Winters</td>
                     <td>Accountant</td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Review</button></td>
+                    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Review
+                    </button></td>
                     
                 </tr>
             </tbody>

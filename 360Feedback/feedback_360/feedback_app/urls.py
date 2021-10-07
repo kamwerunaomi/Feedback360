@@ -18,5 +18,7 @@ urlpatterns = [
     path('profile',views.profile, name='profile'),
     path('questions', views.questions, name='questions'),
     path('aadmin', views.admin,name='aadmin'),
+    # path('edit/<int:id>', views.update, name='update'),
+    path('edit/<int:id>', views.edit, name='edit'),
 
 ]

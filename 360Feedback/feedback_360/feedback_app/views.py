@@ -22,6 +22,20 @@ from django.template.loader import get_template
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth import get_user_model
 
+def admin(request):
+	return render(request, 'admin.html')
+
+def edit(request,id):  
+	users = User.objects.get(id=id)  
+
+	context={
+		'User':users,
+		}
+	return render(request,'', context) 
+
+def index(request):
+	return render(request, "index.html")
+
 def login_view(request):
 	if request.method == "POST":
 		username = request.POST.get("username")
@@ -69,9 +83,6 @@ def password_reset_request(request):
 	}
 	return render(request, "password/password_reset.html", context)
 
-def index(request):
-	return render(request, "index.html")
-
 def performance(request):
 	return render(request, "performance.html")
 
@@ -80,11 +91,6 @@ def profile(request):
 
 def questions(request):
 	return render(request, 'questions.html')
-def admin(request):
-	return render(request, 'admin.html')
-
-def users(request):
-	return render(request,'user.html')
 
 def rating(request):
 	return render(request, "rating.html")
@@ -102,3 +108,17 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
+
+def users(request):
+	return render(request,'user.html')
+
+def update(request,id):
+	users = User.objects.get(id=id)
+	form=updateForm(request.POST, instance=users)
+	if form.is_valid():
+		form.save()
+
+	return render(request,'index.html', {'User': users})
+
+
+

@@ -7,19 +7,15 @@ from django.utils.timezone import now
 from django.contrib.auth.models import AbstractBaseUser
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.contrib.auth.models import AbstractUser
 
 
-# Create your models here.
 class Department(models.Model):
 	dept_id=models.IntegerField()
 	dept_name=models.CharField(max_length=100)
 
-# class User(AbstractUser):
-# 	icon=models.ImageField()
-# 	dept_id=models.ForeignKey(Department, on_delete=models.SET_NULL,to_field='id',null = True)
-# 	#reviewee=models.array
-# 	#reviewer=models.array
-# 	#request=models.array
+# class RealUser(AbstractUser):
+#     department=models.ForeignKey(Department, on_delete=models.SET_NULL,to_field='id',null = True)
 
 
 
