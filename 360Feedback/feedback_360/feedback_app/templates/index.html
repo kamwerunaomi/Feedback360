@@ -9,6 +9,8 @@
 {% block content %}
     <!-- Header -->
     {% if user.is_authenticated%}
+    <form method="POST" class="post-form" action="people">  
+
     <div class="container">
       <div class="row">
         <div class="col">
@@ -24,29 +26,33 @@
                     
                 </tr>
             </thead>
+            {% for people in Reviewers %}
+            
             <tbody>
                 <tr>
-                    <td>Tiger Nixon</td>
+                    <td>{{people.reviewer}}</td>
                     <td>System Architect</td>
                     <td><button type="button" class="btn btn-warning">Remove</button></td>
                     
                 </tr>
                 <tr>
-                    <td>Garrett Winters</td>
+                    <td>{{people.reviewer}} {{people.reviewer}}</td>
                     <td>Accountant</td>
                     <td><button type="button" class="btn btn-warning">Remove</button></td>
                 </tr>
                 <tr>
-                  <td>Garrett Winters</td>
+                  <td>{{people.reviewer}} {{people.reviewer}}</td>
                   <td>Accountant</td>
                   <td><button type="button" class="btn btn-warning">Remove</button></td>
               </tr>
                 <tr>
-                  <td>Garrett Winters</td>
+                  <td>{{people.reviewer}} {{people.reviewer}}</td>
                   <td>Accountant</td>
                   <td><button type="button" class="btn btn-warning">Remove</button></td>
                 </tr>
             </tbody>
+           
+            {% endfor %}
           </table>
           <button type="button" class="btn btn-info">Add Reviewer</button>
     
@@ -64,39 +70,43 @@
                     
                 </tr>
             </thead>
+            {% for reviewee in reviewees %}
+            <!-- {% if user_id == user.id %} -->
             <tbody>
                 <tr>
-                    <td>Tiger Nixon</td>
+                    <td>{{reviewee.first_name}} {{user.last_name}}</td>
                     <td>System Architect</td>
                     <td><button type="button" class="btn btn-warning">Remove</button></td>
                     
                 </tr>
                 <tr>
-                    <td>Garrett Winters</td>
+                    <td>{{reviewee.first_name}} {{reviewee.last_name}}</td>
                     <td>Accountant</td>
                     <td><button type="button" class="btn btn-warning">Remove</button></td>
                 </tr>
                 <tr>
-                  <td>Garrett Winters</td>
+                  <td>{{reviewee.first_name}} {{reviewee.last_name}}</td>
                   <td>Accountant</td>
                   <td><button type="button" class="btn btn-warning">Remove</button></td>
                 </tr>
                 <tr>
-                  <td>Garrett Winters</td>
+                  <td>{{reviewee.first_name}} {{reviewee.last_name}}</td>
                   <td>Accountant</td>
                   <td><button type="button" class="btn btn-warning">Remove</button></td>
                 </tr>
                 <tr>
-                  <td>Garrett Winters</td>
+                  <td>{{reviewee.first_name}} {{reviewee.last_name}}</td>
                   <td>Accountant</td>
                   <td><button type="button" class="btn btn-warning">Remove</button></td>
                 </tr>
                 <tr>
-                  <td>Garrett Winters</td>
+                  <td>{{reviewee.first_name}} {{reviewee.last_name}}</td>
                   <td>Accountant</td>
                   <td><button type="button" class="btn btn-warning">Remove</button></td>
                 </tr>
             </tbody>
+            <!-- {% endif %} -->
+            {% endfor %}
           </table>
     
         </div>
@@ -104,6 +114,7 @@
       </div>
     
     </div>
+    </form>
     {% else %}
 {% endif %}
 {% include "includes/footer.html" %}  

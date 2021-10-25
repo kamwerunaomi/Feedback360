@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse,HttpRequest
-from .models import Department,Notifications,Category,Questions,Answers,Average,Report
+from .models import Department,Notifications,Category,Questions,Answers,Average,Report, Reviewers
 from django.contrib.auth import logout
 from .forms import *
 from django.contrib.auth import authenticate, login
@@ -31,7 +31,7 @@ def edit(request,id):
 	context={
 		'User':users,
 		}
-	return render(request,'', context) 
+	return render(request,'edit.html', context) 
 
 def index(request):
 	return render(request, "index.html")
@@ -83,6 +83,14 @@ def password_reset_request(request):
 	}
 	return render(request, "password/password_reset.html", context)
 
+def people(request, UserReviewee):
+	rpeople=Reviewers.objects.get(id==UserReviewee)
+	context={
+			'Reviewers':rpeople,
+	}
+	return render(request, 'index.html', context)
+
+
 def performance(request):
 	return render(request, "performance.html")
 
@@ -118,7 +126,7 @@ def update(request,id):
 	if form.is_valid():
 		form.save()
 
-	return render(request,'index.html', {'User': users})
+	return render(request,'profile.html', {'User': users})
 
 
 

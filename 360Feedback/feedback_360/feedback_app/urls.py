@@ -8,7 +8,9 @@ urlpatterns = [
 	#path('', include('feedback_app.urls')),
     path('/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name='index.html'), name='index'),
+    # path('', TemplateView.as_view(template_name='index.html'), name='index'),
+    # path('', views.people, name='people'),
+    path('', views.people, name='people'),
     path('users',views.users, name='user'),
     path("password_reset/", views.password_reset_request, name="password_reset"),
     path('index', views.index, name='index'),
@@ -20,5 +22,7 @@ urlpatterns = [
     path('aadmin', views.admin,name='aadmin'),
     # path('edit/<int:id>', views.update, name='update'),
     path('edit/<int:id>', views.edit, name='edit'),
+    path('update/<int:id>', views.update, name='update'),
+	path('edit/update/<int:id>', views.update)
 
 ]
